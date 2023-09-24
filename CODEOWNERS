@@ -1,0 +1,14 @@
+.github/ @Quantalabs
+.husky/ @Quantalabs
+src/ @Quantalabs @quantum9innovation
+.editorconfig @Quantalabs
+.eslintrc @Quantalabs
+.gitattributes @Quantalabs
+.gitignore @Quantalabs
+.prettierrc @Quantalabs
+.yarnrc.yml @Quantalabs
+AUTHORS @Quantalabs @quantum9innovation
+package.json @Quantalabs
+README.md @Quantalabs @quantum9innovation
+tsconfig.json @Quantalabs
+yarn.lock @Quantalabs

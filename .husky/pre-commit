@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+yarn lint
+LIST=`git diff-index --name-only --cached HEAD`; if [ "$LIST" ]; then yarn prettier --write $LIST; git add $LIST; fi
