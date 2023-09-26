@@ -1,13 +1,14 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "commonjs",
+        "module": "node16",
         "lib": ["es2017", "es7", "es6", "dom"],
         "declaration": true,
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "dist"
     },
     "exclude": ["node_modules", "dist"]
 }
