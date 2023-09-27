@@ -4,6 +4,7 @@
  * @param {string} input - The input string to be parsed.
  * @return {object} - An object containing model information.
  */
+// eslint-disable-next-line complexity
 const parse = (input: string) => {
     const modelInfo = {
         meta: {},
@@ -67,6 +68,50 @@ This parser only supports v1 schema.`)
             }
 
             modelInfo['compartments'] = compartments
+        } else if (sections[i].startsWith('s\n')) {
+            const lines = sections[i].replace('s\n', '').trim().split('\n')
+            const system: { [key: string]: string } = {}
+
+            for (let j = 0; j < lines.length; j++) {
+                const line = lines[j].split('=')
+
+                system[line[0]] = line[1].trim()
+            }
+
+            modelInfo['system'] = system
+        } else if (sections[i].startsWith('p\n')) {
+            const lines = sections[i].replace('p\n', '').trim().split('\n')
+            const parameters: { [key: string]: string } = {}
+
+            for (let j = 0; j < lines.length; j++) {
+                const line = lines[j].split('=')
+
+                parameters[line[0]] = line[1].trim()
+            }
+
+            modelInfo['parameters'] = parameters
+        } else if (sections[i].startsWith('i\n')) {
+            const lines = sections[i].replace('i\n', '').trim().split('\n')
+            const initialStates: { [key: string]: string } = {}
+
+            for (let j = 0; j < lines.length; j++) {
+                const line = lines[j].split('=')
+
+                initialStates[line[0]] = line[1].trim()
+            }
+
+            modelInfo['initialStates'] = initialStates
+        } else if (sections[i].startsWith('v\n')) {
+            const lines = sections[i].replace('v\n', '').trim().split('\n')
+            const variables: { [key: string]: string } = {}
+
+            for (let j = 0; j < lines.length; j++) {
+                const line = lines[j].split('=')
+
+                variables[line[0]] = line[1].trim()
+            }
+
+            modelInfo['variables'] = variables
         }
     }
 
