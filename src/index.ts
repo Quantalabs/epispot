@@ -1,3 +1,4 @@
 import parser from './parser'
+import model from './model'
 
-export { parser }
+export { parser, model }
