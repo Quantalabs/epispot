@@ -56,29 +56,19 @@ This parser only supports v1 schema.`)
             for (let j = 0; j < lines.length; j++) {
                 const line = lines[j].split(',')
 
-                line[2] = line.slice(2).join(',')
+                line[3] = line.slice(3).join(',')
 
                 compartments[line[0]] = {
-                    name: line[1].trim()
+                    name: line[1].trim(),
+                    derivative: line[2].trim()
                 }
 
-                compartments[line[0]]['connected'] = line[2]
+                compartments[line[0]]['connected'] = line[3]
                     .split(',')
                     .map(x => x.trim())
             }
 
             modelInfo['compartments'] = compartments
-        } else if (sections[i].startsWith('s\n')) {
-            const lines = sections[i].replace('s\n', '').trim().split('\n')
-            const system: { [key: string]: string } = {}
-
-            for (let j = 0; j < lines.length; j++) {
-                const line = lines[j].split('=')
-
-                system[line[0]] = line[1].trim()
-            }
-
-            modelInfo['system'] = system
         } else if (sections[i].startsWith('p\n')) {
             const lines = sections[i].replace('p\n', '').trim().split('\n')
             const parameters: { [key: string]: string } = {}

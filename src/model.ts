@@ -13,13 +13,7 @@ type Model = {
         version?: string
     }
     compartments: {
-        [key: Compartment['abbr']]: {
-            name: Compartment['name']
-            connected?: Compartment['abbr'][]
-        }
-    }
-    system: {
-        [key: Compartment['abbr']]: Compartment['derivative']
+        [key: string]: Compartment
     }
     parameters: {
         [key: string]: string
