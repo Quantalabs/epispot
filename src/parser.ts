@@ -1,11 +1,13 @@
+import { Compartment, Model } from './model'
+
 /**
  * Parses the input string and returns an object containing model information.
  *
  * @param {string} input - The input string to be parsed.
- * @return {object} - An object containing model information.
+ * @return {Model} - Returns a model object with the parsed information. Also generates compartments from the input.
  */
 // eslint-disable-next-line complexity
-const parse = (input: string) => {
+const parse = (input: string): Model => {
     const modelInfo = {
         meta: {},
         compartments: {},
@@ -50,7 +52,11 @@ This parser only supports v1 schema.`)
         if (sections[i].startsWith('c\n')) {
             const lines = sections[i].replace('c\n', '').trim().split('\n')
             const compartments: {
-                [key: string]: { name: string; connected?: string[] }
+                [key: string]: {
+                    name: string
+                    connected?: string[]
+                    derivative: string
+                }
             } = {}
 
             for (let j = 0; j < lines.length; j++) {
@@ -105,7 +111,27 @@ This parser only supports v1 schema.`)
         }
     }
 
-    return modelInfo
+    // Conver modelInfo into model
+    const compartments: {
+        [key: string]: Compartment
+    } = {}
+
+    for (const compartment in modelInfo.compartments) {
+        compartments[compartment] =
+            modelInfo.compartments[
+                compartment as keyof typeof modelInfo.compartments
+            ]
+    }
+
+    const model: Model = {
+        meta: modelInfo.meta,
+        compartments: compartments,
+        parameters: modelInfo.parameters,
+        initialStates: modelInfo.initialStates,
+        variables: modelInfo.variables
+    }
+
+    return model
 }
 
 export default parse
