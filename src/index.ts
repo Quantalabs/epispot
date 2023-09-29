@@ -1,4 +1,4 @@
 import parser from './parser'
-import model from './model'
+import * as model from './model'
 
 export { parser, model }
