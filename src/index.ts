@@ -1,5 +1,6 @@
 import parse from './parser.js'
 import * as model from './model.js'
 import solve from './solve.js'
+import plot from './plot.js'
 
-export { parse, model, solve }
+export { parse, model, solve, plot }
