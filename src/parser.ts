@@ -1,13 +1,14 @@
 import { Compartment, Model } from './model.js'
+import fs from 'fs'
 
 /**
  * Parses the input string and returns an object containing model information.
  *
- * @param {string} input - The input string to be parsed.
+ * @param {string} file - The input file to be parsed.
  * @return {Model} - Returns a model object with the parsed information. Also generates compartments from the input.
  */
 // eslint-disable-next-line complexity
-const parse = (input: string): Model => {
+const parse = (file: string): Model => {
     const modelInfo = {
         meta: {},
         compartments: {},
@@ -16,6 +17,8 @@ const parse = (input: string): Model => {
         initialStates: {},
         variables: {}
     }
+
+    const input = fs.readFileSync(file, 'utf-8')
 
     // Parse frontmatter
     let fmUnparsed = ''
