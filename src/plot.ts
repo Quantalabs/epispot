@@ -2,8 +2,8 @@ import { Model } from './model.js'
 import solve from './solve.js'
 import http from 'http'
 
-const plot = async (model: Model, time: number) => {
-    const solution = solve(model, time)
+const plot = async (model: Model, time: number, stepSize: number = 0.1) => {
+    const solution = solve(model, time, stepSize)
 
     const plotlyData: {
         x: number[]

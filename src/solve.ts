@@ -8,7 +8,11 @@ import * as math from 'mathjs'
  * @param {number} time - The time to solve for.
  * @return {Object} - Returns an object containing an array of values solved for for each compartment.
  */
-const solve = (model: Model, time: number): { [key: string]: number[] } => {
+const solve = (
+    model: Model,
+    time: number,
+    stepSize: number = 0.1
+): { [key: string]: number[] } => {
     const solution: { [key: string]: number[] } = {}
 
     const compartments = model.compartments
@@ -38,7 +42,7 @@ const solve = (model: Model, time: number): { [key: string]: number[] } => {
         solution[states] = [result]
     }
 
-    for (let t = 1; t <= time; t++) {
+    for (let t = 1; t <= time; t += stepSize) {
         scope['t'] = t
 
         const newState: { [key: string]: number } = {}
