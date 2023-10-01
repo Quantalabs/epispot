@@ -22,7 +22,7 @@ type Model = {
         [key: string]: string
     }
     variables: {
-        [key: string]: string | number
+        [key: string]: string
     }
 }
 

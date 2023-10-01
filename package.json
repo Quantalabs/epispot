@@ -41,12 +41,15 @@
         "rimraf": "^5.0.4",
         "typescript": "^5.2.2"
     },
-    "type": "commonjs",
+    "type": "module",
     "types": "./dist/index.d.ts",
     "husky": {
         "hooks": {
             "pre-commit": "pretty-quick --staged"
         }
     },
-    "packageManager": "yarn@3.6.3"
+    "packageManager": "yarn@3.6.3",
+    "dependencies": {
+        "mathjs": "^11.11.1"
+    }
 }

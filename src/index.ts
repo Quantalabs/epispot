@@ -1,4 +1,5 @@
-import parser from './parser'
-import * as model from './model'
+import parser from './parser.js'
+import * as model from './model.js'
+import solve from './solve.js'
 
-export { parser, model }
+export { parser, model, solve }

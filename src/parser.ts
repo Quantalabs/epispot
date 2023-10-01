@@ -1,4 +1,4 @@
-import { Compartment, Model } from './model'
+import { Compartment, Model } from './model.js'
 
 /**
  * Parses the input string and returns an object containing model information.
@@ -64,12 +64,12 @@ This parser only supports v1 schema.`)
 
                 line[3] = line.slice(3).join(',')
 
-                compartments[line[0]] = {
+                compartments[line[0].trim()] = {
                     name: line[1].trim(),
                     derivative: line[2].trim()
                 }
 
-                compartments[line[0]]['connected'] = line[3]
+                compartments[line[0].trim()]['connected'] = line[3]
                     .split(',')
                     .map(x => x.trim())
             }
@@ -82,7 +82,7 @@ This parser only supports v1 schema.`)
             for (let j = 0; j < lines.length; j++) {
                 const line = lines[j].split('=')
 
-                parameters[line[0]] = line[1].trim()
+                parameters[line[0].trim()] = line[1].trim()
             }
 
             modelInfo['parameters'] = parameters
@@ -93,7 +93,7 @@ This parser only supports v1 schema.`)
             for (let j = 0; j < lines.length; j++) {
                 const line = lines[j].split('=')
 
-                initialStates[line[0]] = line[1].trim()
+                initialStates[line[0].trim()] = line[1].trim()
             }
 
             modelInfo['initialStates'] = initialStates
@@ -104,7 +104,7 @@ This parser only supports v1 schema.`)
             for (let j = 0; j < lines.length; j++) {
                 const line = lines[j].split('=')
 
-                variables[line[0]] = line[1].trim()
+                variables[line[0].trim()] = line[1].trim()
             }
 
             modelInfo['variables'] = variables
