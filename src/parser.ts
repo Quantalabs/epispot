@@ -18,7 +18,7 @@ const parse = (file: string): Model => {
         variables: {}
     }
 
-    const input = fs.readFileSync(file, 'utf-8')
+    const input = fs.readFileSync(file, 'utf-8').toString().replace(/\r/g, '')
 
     // Parse frontmatter
     let fmUnparsed = ''
