@@ -18,19 +18,19 @@ const solve = (
     const compartments = model.compartments
     const parameters = model.parameters
     const initialStates = model.initialStates
-    const variables = model.variables
+    const constants = model.constants
 
     let scope: { [key: string]: number | string } = {
         t: 0
     }
 
     // Solve the variables
-    for (const variable in variables) {
-        const node2 = math.parse(variables[variable as keyof typeof variables])
+    for (const constant in constants) {
+        const node2 = math.parse(constants[constant as keyof typeof constants])
         const code2 = node2.compile()
         const result = code2.evaluate(scope)
 
-        scope = { ...scope, [variable]: result }
+        scope = { ...scope, [constant]: result }
     }
 
     for (const states in initialStates) {

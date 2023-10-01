@@ -15,7 +15,7 @@ const parse = (file: string): Model => {
         system: {},
         parameters: {},
         initialStates: {},
-        variables: {}
+        constants: {}
     }
 
     const input = fs.readFileSync(file, 'utf-8').toString().replace(/\r/g, '')
@@ -131,7 +131,7 @@ This parser only supports v1 schema.`)
         compartments: compartments,
         parameters: modelInfo.parameters,
         initialStates: modelInfo.initialStates,
-        variables: modelInfo.variables
+        constants: modelInfo.constants
     }
 
     return model

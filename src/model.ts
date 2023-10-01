@@ -21,7 +21,7 @@ type Model = {
     initialStates: {
         [key: string]: string
     }
-    variables: {
+    constants: {
         [key: string]: string
     }
 }
