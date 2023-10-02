@@ -5,8 +5,9 @@ import * as math from 'mathjs'
  * Solves the given model.
  *
  * @param {Model} model - The model to be solved.
- * @param {number} time - The time to solve for.
- * @return {Object} - Returns an object containing an array of values solved for for each compartment.
+ * @param {number} time - The duration of the simulation.
+ * @param {number} [stepSize=0.1] - The time step size.
+ * @return {object} - Returns an object containing an array of values for each compartment at each time step.
  */
 const solve = (
     model: Model,
