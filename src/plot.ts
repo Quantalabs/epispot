@@ -10,7 +10,7 @@ import http from 'http'
  * @param {number} [stepSize=0.1] - The step size to use in the numerical solver. Defaults to 0.1.
  * @return {http.Server} The server object that is listening on port 3000.
  */
-const plot = async (
+const plot = (
     model: Model,
     time: number,
     stepSize: number = 0.1
