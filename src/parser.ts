@@ -4,8 +4,8 @@ import fs from 'fs'
 /**
  * Parses the input string and returns an object containing model information.
  *
- * @param {string} file - The input file to be parsed.
- * @return {Model} - Returns a model object with the parsed information. Also generates compartments from the input.
+ * @param file - The input file to be parsed.
+ * @return - Returns a model object with the parsed information. Also generates compartments from the input.
  */
 // eslint-disable-next-line complexity
 const parse = (file: string): Model => {

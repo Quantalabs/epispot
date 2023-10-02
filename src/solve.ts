@@ -4,10 +4,10 @@ import * as math from 'mathjs'
 /**
  * Solves the given model.
  *
- * @param {Model} model - The model to be solved.
- * @param {number} time - The duration of the simulation.
- * @param {number} [stepSize=0.1] - The time step size.
- * @return {object} - Returns an object containing an array of values for each compartment at each time step.
+ * @param model - The model to be solved.
+ * @param time - The duration of the simulation.
+ * @param stepSize - The time step size.
+ * @return - Returns an object containing an array of values for each compartment at each time step.
  */
 const solve = (
     model: Model,

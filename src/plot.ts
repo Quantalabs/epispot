@@ -5,10 +5,10 @@ import http from 'http'
 /**
  * Generates a plot of the solution to a given model over a specified time period.
  *
- * @param {Model} model - The model to solve and plot.
- * @param {number} time - The time period to plot the solution for.
- * @param {number} [stepSize=0.1] - The step size to use in the numerical solver. Defaults to 0.1.
- * @return {http.Server} The server object that is listening on port 3000.
+ * @param model - The model to solve and plot.
+ * @param time - The time period to plot the solution for.
+ * @param [stepSize=0.1] - The step size to use in the numerical solver. Defaults to 0.1.
+ * @return The server object that is listening on port 3000.
  */
 const plot = (
     model: Model,
