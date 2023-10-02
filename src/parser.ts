@@ -102,15 +102,15 @@ This parser only supports v1 schema.`)
             modelInfo['initialStates'] = initialStates
         } else if (sections[i].startsWith('v\n')) {
             const lines = sections[i].replace('v\n', '').trim().split('\n')
-            const variables: { [key: string]: string } = {}
+            const constants: { [key: string]: string } = {}
 
             for (let j = 0; j < lines.length; j++) {
                 const line = lines[j].split('=')
 
-                variables[line[0].trim()] = line[1].trim()
+                constants[line[0].trim()] = line[1].trim()
             }
 
-            modelInfo['variables'] = variables
+            modelInfo['constants'] = constants
         }
     }
 
