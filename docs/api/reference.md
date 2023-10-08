@@ -3,6 +3,7 @@
 ## Namespaces
 
 -   [model](modules/model.md)
+-   [pre](modules/pre.md)
 
 ## Functions
 
@@ -26,7 +27,7 @@ Parses the input string and returns an object containing model information.
 
 #### Defined in
 
-[parser.ts:11](https://github.com/epispot/epispot-new/blob/e760045/src/parser.ts#L11)
+[parser.ts:11](https://github.com/epispot/epispot-new/blob/76e1948/src/parser.ts#L11)
 
 ---
 
@@ -52,7 +53,7 @@ The server object that is listening on port 3000.
 
 #### Defined in
 
-[plot.ts:13](https://github.com/epispot/epispot-new/blob/e760045/src/plot.ts#L13)
+[plot.ts:13](https://github.com/epispot/epispot-new/blob/76e1948/src/plot.ts#L13)
 
 ---
 
@@ -78,4 +79,4 @@ Solves the given model.
 
 #### Defined in
 
-[solve.ts:12](https://github.com/epispot/epispot-new/blob/e760045/src/solve.ts#L12)
+[solve.ts:12](https://github.com/epispot/epispot-new/blob/76e1948/src/solve.ts#L12)

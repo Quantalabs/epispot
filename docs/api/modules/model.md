@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[model.ts:1](https://github.com/epispot/epispot-new/blob/e760045/src/model.ts#L1)
+[model.ts:1](https://github.com/epispot/epispot-new/blob/76e1948/src/model.ts#L1)
 
 ---
 
@@ -41,4 +41,4 @@
 
 #### Defined in
 
-[model.ts:8](https://github.com/epispot/epispot-new/blob/e760045/src/model.ts#L8)
+[model.ts:8](https://github.com/epispot/epispot-new/blob/76e1948/src/model.ts#L8)

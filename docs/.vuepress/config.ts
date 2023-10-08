@@ -29,7 +29,11 @@ export default defineConfig({
                     title: 'API Reference',
                     path: '/api/',
                     collapsable: false,
-                    children: ['/api/reference', '/api/modules/model']
+                    children: [
+                        '/api/reference',
+                        '/api/modules/model',
+                        '/api/modules/pre'
+                    ]
                 }
             ],
             '/': ['']
