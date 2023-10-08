@@ -1,0 +1,14 @@
+name: Deploy to GitHub pages
+on:
+    release:
+        types: [published]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Generate Docs
+              uses: actions/setup-node@v2
+              with:
+                  node-version: '16'
+            - run: scripts/deployDocs.sh
